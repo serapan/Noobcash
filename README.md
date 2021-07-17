@@ -26,6 +26,12 @@
 
 Αρχικά, τρέχουμε τον Bootstrap Node:
 ```shell
-python3 rest.py -a 192.168.11.122 -p 5000 -ba 192.168.11.122 -bp 5000 --bootstrap -n 2
+python3 rest.py -a <bootstrap_ip> -p <bootstrap_port> -ba <bootstrap_ip> -bp <bootstrap_port> --bootstrap -n 5
 ```
 Οι παράμετροι a και ba καθορίζουν τη διεύθυνση ip του Bootstrap Node, ενώ οι παράμετροι p και bp το port στο οποίο λειτουργεί. Η παράμετρος bootstrap υποδηλώνει ότι ο συγκεκριμένος κόμβος είναι ο Bootstrap Node. Τέλος, η παράμετρος n όριζει το πλήθος των κόμβων που συμμετέχουν στο δίκτυο.
+
+Στη σύνεχεια, για κάθε κόμβο που θέλουμε να προσθέσουμε στο δίκτυο τρέχουμε:
+```shell
+python3 rest.py -a <node_ip> -p <node_port> -ba <bootstrap_ip> -bp <bootstrap_port>
+```
+Οι παράμετροι a και p καθορίζουν τη διεύθυνση ip και το port του κόμβου που εισάγουμε στο σύστημα, ενώ οι παράμετροι ba και bp καθορίζουν τη διεύθυνση ip και το port του κόμβου Bootstrap Node.
